@@ -1,0 +1,25 @@
+{
+  "name": "Freeze page",
+  "description": "Chrome Extension to freeze current tab",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "icons": {
+    "16": "images/icon.png",
+    "48": "images/icon.png",
+    "128": "images/icon.png"
+  },
+  "action": {
+    "default_title": "Freeze Page Extension",
+    "default_icon": "images/icon.png"
+  },
+  "permissions": ["contextMenus", "tabs"],
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/contentScript.js"]
+    }
+  ]
+}
